@@ -1,24 +1,35 @@
-# Hey, I'm Arian 👋
+## Nobulex
 
-I'm 15 and I'm building **[Nobulex](https://github.com/arian-gogani/nobulex)**: credit scores for AI agents.
+**The independent reliability registry for agent tools.**
 
-AI agents are about to manage trillions in economic activity, but right now they get full access on day one and build zero track record. Trust Capital fixes that. Agents earn credit through verified behavior. That credit has real economic value: more autonomy, bigger transaction limits, lower insurance premiums, enterprise approval. Autonomy earned, not granted.
+An agent calls a tool. The tool returns a response that is well formed, plausible, and materially wrong. Empty where it should have been populated. Stale while claiming to be current. Scoped to a different entity than the one requested. Truncated with no signal that anything was cut. Nothing raises, nothing logs, and the schema validates, because a well formed lie validates perfectly.
 
-### What's happening
+Uptime does not measure that. Stars do not measure it. A green CI badge does not measure it. Every existing reliability signal in this ecosystem answers "did it respond." None of them answer "was the response true."
 
-- 🏛️ Microsoft merged the core primitive into their [Agent Governance Toolkit](https://github.com/microsoft/agent-governance-toolkit)
-- 🐧 [OpenLineage](https://github.com/OpenLineage/OpenLineage) (Linux Foundation) accepted Nobulex into their ecosystem
-- 📋 Under staff review at the [AAIF](https://github.com/aaif/project-proposals/issues/20) (Linux Foundation, founded by Anthropic, OpenAI, Google, Microsoft, AWS, Block)
-- 📄 Cited in [State of Agent Security 2026](https://agentgraph.co/state-of-agent-security-2026) litepaper (10/10 conformance)
-- 🚀 Applying to Y Combinator S26
+One test: **does it fail loud, or does it lie quiet?**
 
-### Try it
+Financial data first, because it is the one category where the right answer is unambiguous, timestamped, and independently obtainable.
 
-```bash
-npm install @nobulex/core
-npx tsx examples/trust-capital-demo.ts
+### Where it is
+
+[**nobulex-registry**](https://github.com/arian-gogani/nobulex-registry) is the method: the harness that speaks raw JSON-RPC to a subject and never imports its code, the self-test that runs every classifier against fixtures known to be bad, and the publication gate. MIT.
+
+[**nobulex.com**](https://nobulex.com) is the register, the method, and the argument. The argument is written to be attacked.
+
+### The state of it, plainly
+
+Every record this registry has issued is held under right of reply. Nothing is published, no reply window has opened, and no verdict here is checkable by a stranger yet. No buyer has paid. The site says all of that on its own pages, because a project whose product is grading other people's honesty does not get to round its own status up.
+
+One thing is checkable right now:
+
+```
+curl -sS https://nobulex.com/register | shasum -a 256
 ```
 
-### Links
+That should equal the hash of `brand/register.html` in the registry repository. The page is compiled from the records by a generator that writes identical bytes to every publish target in a single build, so no hand reaches the page in between. A downstream copy step is a second author, and a second author of that page is a second chance to publish a name that is under embargo. If those two hashes ever disagree, something edited the published page afterward, and it is worth saying so loudly.
 
-🌐 [nobulex.com](https://nobulex.com) · 📦 [npm](https://www.npmjs.com/org/nobulex) · 📝 [Blog](https://nobulex.com/blog-ai-agents-need-credit-scores) · 🐦 [@AGoganiii](https://x.com/AGoganiii)
+### Elsewhere
+
+Earlier work under the same name is at [nobulex](https://github.com/arian-gogani/nobulex), kept rather than deleted, with a header saying what changed.
+
+[nobulex.com](https://nobulex.com) · [@AGoganiii](https://x.com/AGoganiii) · nobulex.dev@gmail.com
