@@ -1,35 +1,81 @@
-## Nobulex
+<div align="center">
 
-**The independent reliability registry for agent tools.**
+# Arian Gogani
 
-An agent calls a tool. The tool returns a response that is well formed, plausible, and materially wrong. Empty where it should have been populated. Stale while claiming to be current. Scoped to a different entity than the one requested. Truncated with no signal that anything was cut. Nothing raises, nothing logs, and the schema validates, because a well formed lie validates perfectly.
+**Student builder and open-source researcher · Granite Bay High School**
 
-Uptime does not measure that. Stars do not measure it. A green CI badge does not measure it. Every existing reliability signal in this ecosystem answers "did it respond." None of them answer "was the response true."
+I build reproducible systems that test what AI verification actually checked, then turn the result into evidence a stranger can inspect.
 
-One test: **does it fail loud, or does it lie quiet?**
+[Portfolio](https://arian-gogani.github.io) · [Nobulex](https://nobulex.com) · [LinkedIn](https://www.linkedin.com/in/arian-gogani-nobulex/) · [X](https://x.com/nobulexlabs)
 
-Financial data first, because it is the one category where the right answer is unambiguous, timestamped, and independently obtainable.
+</div>
 
-### Where it is
+## What I am building
 
-[**nobulex-registry**](https://github.com/arian-gogani/nobulex-registry) is the method: the harness that speaks raw JSON-RPC to a subject and never imports its code, the self-test that runs every classifier against fixtures known to be bad, and the publication gate. MIT.
+I work on one question: **what did a successful-looking verification result actually check?**
 
-[**nobulex.com**](https://nobulex.com) is the register, the method, and the argument. The argument is written to be attacked.
+My current work is Nobulex, a decision-integrity boundary for automated financial actions. It keeps two questions separate:
 
-### The state of it, plainly
+1. **What does the available evidence establish?** `PASS`, `FAIL`, or `INDETERMINATE`.
+2. **What may the system do next?** `PERMIT`, `BLOCK`, or `ESCALATE`.
 
-Every record this registry has issued is held under right of reply. Nothing is published, no reply window has opened, and no verdict here is checkable by a stranger yet. No buyer has paid. The site says all of that on its own pages, because a project whose product is grading other people's honesty does not get to round its own status up.
+That separation matters because missing or unreadable evidence should never quietly become approval.
 
-One thing is checkable right now:
+## Measured, not rounded up
 
+| 40 | 11 | 27 | 4 |
+|:---:|:---:|:---:|:---:|
+| stars on Nobulex | forks of Nobulex | executable research fixtures | merged conformance-harness PRs |
+
+<sub>GitHub metrics measured 2026-09-27. Fixture and PR counts link to inspectable artifacts below.</sub>
+
+## Architecture
+
+```text
+proposed action
+      │
+      ▼
+evidence binding ──► PASS / FAIL / INDETERMINATE
+      │
+      ▼
+bounded policy   ──► PERMIT / BLOCK / ESCALATE
+      │
+      ▼
+signed decision receipt
 ```
-curl -sS https://nobulex.com/register | shasum -a 256
-```
 
-That should equal the hash of `brand/register.html` in the registry repository. The page is compiled from the records by a generator that writes identical bytes to every publish target in a single build, so no hand reaches the page in between. A downstream copy step is a second author, and a second author of that page is a second chance to publish a name that is under embargo. If those two hashes ever disagree, something edited the published page afterward, and it is worth saying so loudly.
+**01 · Collect evidence**
 
-### Elsewhere
+Bind the proposed action to the exact inputs, sources, timestamps, and identities it depends on.
 
-Earlier work under the same name is at [nobulex](https://github.com/arian-gogani/nobulex), kept rather than deleted, with a header saying what changed.
+**02 · Establish status**
 
-[nobulex.com](https://nobulex.com) · [@AGoganiii](https://x.com/AGoganiii) · nobulex.dev@gmail.com
+Return PASS, FAIL, or INDETERMINATE. Missing evidence never becomes a clean result.
+
+**03 · Apply policy**
+
+A bounded deterministic policy returns PERMIT, BLOCK, or ESCALATE.
+
+**04 · Preserve the decision**
+
+Sign a receipt that binds the action, evidence references, policy version, and outcome.
+
+## Selected work
+
+| Project | What it does | What is inspectable |
+|---|---|---|
+| [**Nobulex**](https://github.com/arian-gogani/nobulex) | Executable research on verification boundaries: skipped coverage, self-selected trust anchors, policy scope, log integrity, and ambiguous evidence. | 27 synthetic fixtures, six paired historical parser cases, and public CI. |
+| [**Decision-integrity gateway**](https://github.com/arian-gogani/nobulex-registry) | A Python prototype that separates evidence status from execution policy before a financial action can proceed. | PASS, FAIL, or INDETERMINATE evidence feeds a separate PERMIT, BLOCK, or ESCALATE decision. |
+| [**Fail-open corpus**](https://github.com/arian-gogani/failopen) | Minimal reproductions of evaluators and safety checks that can report success without completing the check their result appears to certify. | Each published case names its reproduction limits instead of generalizing from one defect. |
+
+## External results
+
+- [**Four conformance-harness pull requests merged**](https://github.com/ScopeBlind/agent-governance-testvectors/pulls?q=is%3Apr+author%3Aarian-gogani+is%3Amerged) — The public research distinguishes merged changes from endorsement and freshly reruns only the case it says it reruns.
+- [**A verifier defect reproduced and fixed upstream**](https://github.com/ScopeBlind/agent-governance-testvectors/pull/24) — The maintainer reproduced the failure, released a corrected verifier, and confirmed all four negative checks.
+- [**Verification-boundary research runs in public CI**](https://github.com/arian-gogani/nobulex/actions/workflows/verification-boundaries.yml) — The fixture expectations, historical replay metadata, and deliberate-regression checks are inspectable.
+
+## Working standard
+
+I publish the command, the expected result, and the limitation beside the claim. If a result cannot establish something, it should say so. If I am wrong, the correction stays visible.
+
+<sub>Canonical profile data: [`data/profile.json`](data/profile.json). This README is generated from it.</sub>

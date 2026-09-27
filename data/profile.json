@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "Arian Gogani",
+    "role": "Student builder and open-source researcher",
+    "school": "Granite Bay High School",
+    "location": "Granite Bay, California",
+    "bio": "I build reproducible systems that test what AI verification actually checked, then turn the result into evidence a stranger can inspect.",
+    "short_bio": "Granite Bay High School student building reproducible systems for AI decision integrity. Creator of Nobulex."
+  },
+  "links": {
+    "github": "https://github.com/arian-gogani",
+    "linkedin": "https://www.linkedin.com/in/arian-gogani-nobulex/",
+    "portfolio": "https://arian-gogani.github.io",
+    "nobulex": "https://nobulex.com",
+    "x": "https://x.com/nobulexlabs"
+  },
+  "metrics": {
+    "measured_at": "2026-09-27",
+    "nobulex_stars": 40,
+    "nobulex_forks": 11,
+    "verification_fixtures": 27,
+    "merged_conformance_prs": 4
+  },
+  "projects": [
+    {
+      "name": "Nobulex",
+      "url": "https://github.com/arian-gogani/nobulex",
+      "eyebrow": "Reproducible research",
+      "description": "Executable research on verification boundaries: skipped coverage, self-selected trust anchors, policy scope, log integrity, and ambiguous evidence.",
+      "proof": "27 synthetic fixtures, six paired historical parser cases, and public CI."
+    },
+    {
+      "name": "Decision-integrity gateway",
+      "url": "https://github.com/arian-gogani/nobulex-registry",
+      "eyebrow": "Working prototype",
+      "description": "A Python prototype that separates evidence status from execution policy before a financial action can proceed.",
+      "proof": "PASS, FAIL, or INDETERMINATE evidence feeds a separate PERMIT, BLOCK, or ESCALATE decision."
+    },
+    {
+      "name": "Fail-open corpus",
+      "url": "https://github.com/arian-gogani/failopen",
+      "eyebrow": "Defect research",
+      "description": "Minimal reproductions of evaluators and safety checks that can report success without completing the check their result appears to certify.",
+      "proof": "Each published case names its reproduction limits instead of generalizing from one defect."
+    }
+  ],
+  "architecture": [
+    {
+      "step": "01",
+      "name": "Collect evidence",
+      "description": "Bind the proposed action to the exact inputs, sources, timestamps, and identities it depends on."
+    },
+    {
+      "step": "02",
+      "name": "Establish status",
+      "description": "Return PASS, FAIL, or INDETERMINATE. Missing evidence never becomes a clean result."
+    },
+    {
+      "step": "03",
+      "name": "Apply policy",
+      "description": "A bounded deterministic policy returns PERMIT, BLOCK, or ESCALATE."
+    },
+    {
+      "step": "04",
+      "name": "Preserve the decision",
+      "description": "Sign a receipt that binds the action, evidence references, policy version, and outcome."
+    }
+  ],
+  "external_results": [
+    {
+      "label": "Four conformance-harness pull requests merged",
+      "url": "https://github.com/ScopeBlind/agent-governance-testvectors/pulls?q=is%3Apr+author%3Aarian-gogani+is%3Amerged",
+      "detail": "The public research distinguishes merged changes from endorsement and freshly reruns only the case it says it reruns."
+    },
+    {
+      "label": "A verifier defect reproduced and fixed upstream",
+      "url": "https://github.com/ScopeBlind/agent-governance-testvectors/pull/24",
+      "detail": "The maintainer reproduced the failure, released a corrected verifier, and confirmed all four negative checks."
+    },
+    {
+      "label": "Verification-boundary research runs in public CI",
+      "url": "https://github.com/arian-gogani/nobulex/actions/workflows/verification-boundaries.yml",
+      "detail": "The fixture expectations, historical replay metadata, and deliberate-regression checks are inspectable."
+    }
+  ]
+}
