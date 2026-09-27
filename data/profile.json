@@ -83,5 +83,210 @@
       "url": "https://github.com/arian-gogani/nobulex/actions/workflows/verification-boundaries.yml",
       "detail": "The fixture expectations, historical replay metadata, and deliberate-regression checks are inspectable."
     }
+  ],
+  "achievements": [
+    {
+      "rank": 1,
+      "title": "Execution-receipt guidance merged into OWASP AST09",
+      "classification": "Normative guidance change",
+      "status": "Merged",
+      "summary": "OWASP changed the AST09 risk page itself to include execution-receipt implementation guidance.",
+      "links": [
+        {"label": "OWASP PR #35", "url": "https://github.com/OWASP/www-project-agentic-skills-top-10/pull/35"}
+      ],
+      "caveat": "A merged contribution is not an OWASP endorsement of Nobulex."
+    },
+    {
+      "rank": 2,
+      "title": "Descriptor traversal fix merged into the AGV validator",
+      "classification": "Merged code fix",
+      "status": "Merged",
+      "summary": "The validator now detects descriptor_dimensions shape instead of assuming it. CodeQL, validation, drift, and DCO checks passed before merge.",
+      "links": [
+        {"label": "AGV PR #161", "url": "https://github.com/aeoess/agent-governance-vocabulary/pull/161"}
+      ],
+      "caveat": "This corrects the older note that the pull request was still waiting on DCO."
+    },
+    {
+      "rank": 3,
+      "title": "Five contributions merged into shared agent-governance test vectors",
+      "classification": "Merged implementation and harness changes",
+      "status": "Merged",
+      "summary": "One Nobulex implementation and four later verifier, parser, emitter, and negative-vector changes were merged into ScopeBlind's shared conformance repository.",
+      "links": [
+        {"label": "Implementation #12", "url": "https://github.com/ScopeBlind/agent-governance-testvectors/pull/12"},
+        {"label": "Coverage #15", "url": "https://github.com/ScopeBlind/agent-governance-testvectors/pull/15"},
+        {"label": "Parser #22", "url": "https://github.com/ScopeBlind/agent-governance-testvectors/pull/22"},
+        {"label": "Emitter #23", "url": "https://github.com/ScopeBlind/agent-governance-testvectors/pull/23"},
+        {"label": "Negative vectors #24", "url": "https://github.com/ScopeBlind/agent-governance-testvectors/pull/24"}
+      ],
+      "caveat": "The public research freshly reruns #22 only. Merge does not certify the broader Nobulex product."
+    },
+    {
+      "rank": 4,
+      "title": "AML and sanctions cheat sheet merged into OWASP",
+      "classification": "Merged security guidance",
+      "status": "Merged",
+      "summary": "A 276-line cheat sheet for AML and sanctions controls in AI-agent payments was added to the OWASP Cheat Sheet Series.",
+      "links": [
+        {"label": "OWASP CheatSheetSeries #2210", "url": "https://github.com/OWASP/CheatSheetSeries/pull/2210"}
+      ],
+      "caveat": "The merged document is guidance, not a certification or legal-compliance guarantee."
+    },
+    {
+      "rank": 5,
+      "title": "Verifiable-compliance-receipts proposal merged into Microsoft's toolkit",
+      "classification": "Merged design proposal",
+      "status": "Merged",
+      "summary": "Microsoft's Agent Governance Toolkit added the 75-line proposal to its live documentation tree.",
+      "links": [
+        {"label": "Microsoft AGT #1302", "url": "https://github.com/microsoft/agent-governance-toolkit/pull/1302"}
+      ],
+      "caveat": "This is a proposal in the toolkit, not a Microsoft product endorsement."
+    },
+    {
+      "rank": 6,
+      "title": "Nobulex referenced in Microsoft AI Agents for Beginners",
+      "classification": "Merged curriculum reference",
+      "status": "Merged",
+      "summary": "Lesson 18 added the Nobulex Python receipt SDK to its production references.",
+      "links": [
+        {"label": "Microsoft course #571", "url": "https://github.com/microsoft/ai-agents-for-beginners/pull/571"}
+      ],
+      "caveat": "A one-line reference is not adoption or endorsement."
+    },
+    {
+      "rank": 7,
+      "title": "IETF AUDIT charter corrections merged during review",
+      "classification": "Merged standards-process edit",
+      "status": "Merged",
+      "summary": "Deliverable numbering and eight editorial errors were corrected in the AUDIT BoF preparation charter.",
+      "links": [
+        {"label": "AUDIT charter #31", "url": "https://github.com/mirjak/audit-bof-preparation/pull/31"}
+      ],
+      "caveat": "This was an editorial contribution, not authorship of the charter or IETF endorsement."
+    },
+    {
+      "rank": 8,
+      "title": "AST-mapped adversarial fixture-corpus proposal merged",
+      "classification": "Merged research proposal",
+      "status": "Merged",
+      "summary": "OWASP added the fixture-corpus proposal and two AST09 vectors to its proposals directory.",
+      "links": [
+        {"label": "OWASP PR #46", "url": "https://github.com/OWASP/www-project-agentic-skills-top-10/pull/46"}
+      ],
+      "caveat": "It is a discussion proposal, not normative OWASP specification text."
+    },
+    {
+      "rank": 9,
+      "title": "CVE-2026-45316 recovered from source without advisory knowledge",
+      "classification": "Reproduced historical vulnerability",
+      "status": "Published research",
+      "summary": "Enforcement Coverage reconstructed a weaker read-vs-write permission check from sibling routes and matched the already-published Open WebUI vulnerability.",
+      "links": [
+        {"label": "Enforcement Coverage", "url": "https://github.com/arian-gogani/enforcement-coverage"},
+        {"label": "Official advisory", "url": "https://github.com/open-webui/open-webui/security/advisories/GHSA-jx2x-j75f-xq3j"}
+      ],
+      "caveat": "Recovered, not first discovered. The official advisory classifies it as CWE-863 and low severity."
+    },
+    {
+      "rank": 10,
+      "title": "Witness Independence scale, vectors, and reference grader",
+      "classification": "Self-published executable research",
+      "status": "Public",
+      "summary": "The W0-W4 model grades where a receipt's trust anchor came from. A fresh documented-dependency run completed 36 checks with zero failures.",
+      "links": [
+        {"label": "Witness Independence", "url": "https://github.com/arian-gogani/witness-independence"}
+      ],
+      "caveat": "This is Arian's own model and implementation. Its self-test is not independent validation."
+    },
+    {
+      "rank": 11,
+      "title": "Nobulex solution entry merged alongside other OWASP tools",
+      "classification": "Merged catalog listing",
+      "status": "Merged",
+      "summary": "OWASP's solutions catalog added a 41-line Nobulex entry.",
+      "links": [
+        {"label": "OWASP PR #38", "url": "https://github.com/OWASP/www-project-agentic-skills-top-10/pull/38"}
+      ],
+      "caveat": "A catalog listing is not normative guidance or endorsement."
+    },
+    {
+      "rank": 12,
+      "title": "Nobulex package merged into the Dify plugin marketplace",
+      "classification": "Merged marketplace package",
+      "status": "Merged",
+      "summary": "The packaged Nobulex plugin was added to Dify's official plugin repository.",
+      "links": [
+        {"label": "Dify plugins #2500", "url": "https://github.com/langgenius/dify-plugins/pull/2500"}
+      ],
+      "caveat": "Marketplace inclusion is distribution, not proof of adoption or correctness."
+    },
+    {
+      "rank": 13,
+      "title": "Nobulex added to Microsoft Agent Governance Toolkit adopters",
+      "classification": "Merged adopters listing",
+      "status": "Merged",
+      "summary": "The toolkit's ADOPTERS file added Nobulex as its first listed adopter.",
+      "links": [
+        {"label": "Microsoft AGT #1703", "url": "https://github.com/microsoft/agent-governance-toolkit/pull/1703"}
+      ],
+      "caveat": "The entry was submitted by Arian and does not establish Microsoft endorsement."
+    },
+    {
+      "rank": 14,
+      "title": "Medicare policy archival baseline measured across 85 documents",
+      "classification": "Self-published data audit",
+      "status": "Public",
+      "summary": "The audit reports 41 of 85 surveyed policies, 48%, with zero archived versions in the measured Wayback CDX results.",
+      "links": [
+        {"label": "Baseline Audit", "url": "https://github.com/arian-gogani/baseline-audit"}
+      ],
+      "caveat": "The repository labels this a baseline spike and publishes negative results and scope limits."
+    },
+    {
+      "rank": 15,
+      "title": "DefaultDrift measured 1,253 patch releases",
+      "classification": "Self-published package research",
+      "status": "Public",
+      "summary": "The current repository reports 62 passing tests and a 12-mutation battery with every mutation caught.",
+      "links": [
+        {"label": "DefaultDrift", "url": "https://github.com/arian-gogani/defaultdrift"}
+      ],
+      "caveat": "This corrects the older 61-case, 11-mutation count. The current code is public."
+    },
+    {
+      "rank": 16,
+      "title": "Nobulex listed in awesome-mcp-servers",
+      "classification": "Merged directory listing",
+      "status": "Merged",
+      "summary": "The MCP Compliance Server was added to the directory's security section.",
+      "links": [
+        {"label": "awesome-mcp-servers #4512", "url": "https://github.com/punkpeye/awesome-mcp-servers/pull/4512"}
+      ],
+      "caveat": "A directory row is discoverability, not adoption."
+    },
+    {
+      "rank": 17,
+      "title": "THESIS.md publishes five observable falsifiers",
+      "classification": "Self-published thesis",
+      "status": "Public",
+      "summary": "The project states five conditions that would make the original registry thesis wrong and preserves a correction explaining why they do not fully test the current gateway product.",
+      "links": [
+        {"label": "THESIS.md", "url": "https://github.com/arian-gogani/nobulex-registry/blob/main/THESIS.md"}
+      ],
+      "caveat": "This is self-critique, not external validation."
+    },
+    {
+      "rank": 18,
+      "title": "yfinance price-adjustment observability patch submitted",
+      "classification": "Closed upstream contribution",
+      "status": "Closed without merge",
+      "summary": "The patch proposed stamping every return path so callers could determine whether requested price adjustment actually happened. It included a ten-case test design and live ticker follow-up.",
+      "links": [
+        {"label": "yfinance #2967", "url": "https://github.com/ranaroussi/yfinance/pull/2967"}
+      ],
+      "caveat": "The collaborator closed it without merge. It must not be described as an accepted upstream fix."
+    }
   ]
 }

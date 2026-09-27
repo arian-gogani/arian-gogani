@@ -70,9 +70,13 @@ Sign a receipt that binds the action, evidence references, policy version, and o
 
 ## External results
 
-- [**Four conformance-harness pull requests merged**](https://github.com/ScopeBlind/agent-governance-testvectors/pulls?q=is%3Apr+author%3Aarian-gogani+is%3Amerged) — The public research distinguishes merged changes from endorsement and freshly reruns only the case it says it reruns.
-- [**A verifier defect reproduced and fixed upstream**](https://github.com/ScopeBlind/agent-governance-testvectors/pull/24) — The maintainer reproduced the failure, released a corrected verifier, and confirmed all four negative checks.
-- [**Verification-boundary research runs in public CI**](https://github.com/arian-gogani/nobulex/actions/workflows/verification-boundaries.yml) — The fixture expectations, historical replay metadata, and deliberate-regression checks are inspectable.
+- [**Four conformance-harness pull requests merged**](https://github.com/ScopeBlind/agent-governance-testvectors/pulls?q=is%3Apr+author%3Aarian-gogani+is%3Amerged) - The public research distinguishes merged changes from endorsement and freshly reruns only the case it says it reruns.
+- [**A verifier defect reproduced and fixed upstream**](https://github.com/ScopeBlind/agent-governance-testvectors/pull/24) - The maintainer reproduced the failure, released a corrected verifier, and confirmed all four negative checks.
+- [**Verification-boundary research runs in public CI**](https://github.com/arian-gogani/nobulex/actions/workflows/verification-boundaries.yml) - The fixture expectations, historical replay metadata, and deliberate-regression checks are inspectable.
+
+[**Open the complete Evidence Ledger →**](https://arian-gogani.github.io/evidence.html)
+
+The ledger separates normative changes, merged code, references, listings, open or closed contributions, and self-published research. A merge or listing is never presented as an endorsement.
 
 ## Working standard
 

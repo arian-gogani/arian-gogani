@@ -25,6 +25,11 @@ def main() -> None:
     check("4017b0369" not in json.dumps(data), "old duplicate profile leaked into public identity data")
     check(len(data["projects"]) == 3, "selected project count changed")
     check(len(data["architecture"]) == 4, "architecture must retain four explicit stages")
+    achievements = data["achievements"]
+    check(len(achievements) == 18, "evidence ledger count changed")
+    check([item["rank"] for item in achievements] == list(range(1, 19)), "ledger ranking is not contiguous")
+    check(all(item["links"] for item in achievements), "an achievement has no public evidence link")
+    check(all(item["caveat"] for item in achievements), "an achievement omits its limitation")
 
     subprocess.run([sys.executable, str(ROOT / "scripts" / "render.py")], check=True)
     rendered = README.read_text(encoding="utf-8")
@@ -32,7 +37,8 @@ def main() -> None:
     check("PASS / FAIL / INDETERMINATE" in rendered, "evidence states are missing")
     check("PERMIT / BLOCK / ESCALATE" in rendered, "decision states are missing")
     check("data/profile.json" in rendered, "canonical source is not disclosed")
-    print("profile checks: 10/10 passed")
+    check("complete Evidence Ledger" in rendered, "generated README omits ledger link")
+    print("profile checks: 15/15 passed")
 
 
 if __name__ == "__main__":

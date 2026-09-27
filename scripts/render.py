@@ -32,7 +32,7 @@ def render(profile: dict) -> str:
         for a in architecture
     )
     result_rows = "\n".join(
-        f"- [**{r['label']}**]({r['url']}) — {r['detail']}" for r in results
+        f"- [**{r['label']}**]({r['url']}) - {r['detail']}" for r in results
     )
 
     return f'''<div align="center">
@@ -92,6 +92,10 @@ signed decision receipt
 ## External results
 
 {result_rows}
+
+[**Open the complete Evidence Ledger →**]({links['portfolio']}/evidence.html)
+
+The ledger separates normative changes, merged code, references, listings, open or closed contributions, and self-published research. A merge or listing is never presented as an endorsement.
 
 ## Working standard
 
