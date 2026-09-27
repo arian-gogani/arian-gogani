@@ -51,7 +51,7 @@ def render(profile: dict) -> str:
 
 I work on one question: **what did a successful-looking verification result actually check?**
 
-My current work is Nobulex, a decision-integrity boundary for automated financial actions. It keeps two questions separate:
+My current work is Nobulex, an open-source decision-integrity gateway prototype for automated financial actions. The gateway is implemented and tested locally; it is not deployed in a customer production path. It keeps two questions separate:
 
 1. **What does the available evidence establish?** `PASS`, `FAIL`, or `INDETERMINATE`.
 2. **What may the system do next?** `PERMIT`, `BLOCK`, or `ESCALATE`.

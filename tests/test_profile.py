@@ -36,9 +36,11 @@ def main() -> None:
     check("Granite Bay High School" in rendered, "generated README omits school")
     check("PASS / FAIL / INDETERMINATE" in rendered, "evidence states are missing")
     check("PERMIT / BLOCK / ESCALATE" in rendered, "decision states are missing")
+    check("prototype" in rendered.lower(), "generated README does not identify the gateway as a prototype")
+    check("not deployed" in rendered.lower(), "generated README omits deployment status")
     check("data/profile.json" in rendered, "canonical source is not disclosed")
     check("complete Evidence Ledger" in rendered, "generated README omits ledger link")
-    print("profile checks: 15/15 passed")
+    print("profile checks: 17/17 passed")
 
 
 if __name__ == "__main__":
