@@ -40,7 +40,8 @@ def main() -> None:
     check("not deployed" in rendered.lower(), "generated README omits deployment status")
     check("data/profile.json" in rendered, "canonical source is not disclosed")
     check("complete Evidence Ledger" in rendered, "generated README omits ledger link")
-    print("profile checks: 17/17 passed")
+    check("Press kit" in rendered and "/press.html" in rendered, "generated README omits press kit")
+    print("profile checks: 18/18 passed")
 
 
 if __name__ == "__main__":

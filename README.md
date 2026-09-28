@@ -6,7 +6,7 @@
 
 I build reproducible systems that test what AI verification actually checked, then turn the result into evidence a stranger can inspect.
 
-[Portfolio](https://arian-gogani.github.io) · [Nobulex](https://nobulex.com) · [LinkedIn](https://www.linkedin.com/in/arian-gogani-nobulex/) · [X](https://x.com/nobulexlabs)
+[Portfolio](https://arian-gogani.github.io) · [Press kit](https://arian-gogani.github.io/press.html) · [Nobulex](https://nobulex.com) · [LinkedIn](https://www.linkedin.com/in/arian-gogani-nobulex/) · [X](https://x.com/nobulexlabs)
 
 </div>
 

@@ -43,7 +43,7 @@ def render(profile: dict) -> str:
 
 {ident['bio']}
 
-[Portfolio]({links['portfolio']}) · [Nobulex]({links['nobulex']}) · [LinkedIn]({links['linkedin']}) · [X]({links['x']})
+[Portfolio]({links['portfolio']}) · [Press kit]({links['portfolio']}/press.html) · [Nobulex]({links['nobulex']}) · [LinkedIn]({links['linkedin']}) · [X]({links['x']})
 
 </div>
 
