@@ -27,7 +27,7 @@ That separation matters because missing or unreadable evidence should never quie
 |:---:|:---:|:---:|:---:|
 | stars on Nobulex | forks of Nobulex | executable research fixtures | merged conformance-harness PRs |
 
-<sub>GitHub metrics measured 2026-09-27. Fixture and PR counts link to inspectable artifacts below.</sub>
+<sub>GitHub metrics measured 2026-10-01. Fixture and PR counts link to inspectable artifacts below.</sub>
 
 ## Architecture
 
@@ -71,6 +71,7 @@ Sign a receipt that binds the action, evidence references, policy version, and o
 ## External results
 
 - [**Four conformance-harness pull requests merged**](https://github.com/ScopeBlind/agent-governance-testvectors/pulls?q=is%3Apr+author%3Aarian-gogani+is%3Amerged) - The public research distinguishes merged changes from endorsement and freshly reruns only the case it says it reruns.
+- [**OWASP receipt-guidance update approved by a reviewer**](https://github.com/OWASP/CheatSheetSeries/pull/2217) - The narrowed PR is still open and under review. Approval is not a merge or endorsement.
 - [**A verifier defect reproduced and fixed upstream**](https://github.com/ScopeBlind/agent-governance-testvectors/pull/24) - The maintainer reproduced the failure, released a corrected verifier, and confirmed all four negative checks.
 - [**Verification-boundary research runs in public CI**](https://github.com/arian-gogani/nobulex/actions/workflows/verification-boundaries.yml) - The fixture expectations, historical replay metadata, and deliberate-regression checks are inspectable.
 

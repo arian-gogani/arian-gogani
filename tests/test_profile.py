@@ -26,10 +26,11 @@ def main() -> None:
     check(len(data["projects"]) == 3, "selected project count changed")
     check(len(data["architecture"]) == 4, "architecture must retain four explicit stages")
     achievements = data["achievements"]
-    check(len(achievements) == 18, "evidence ledger count changed")
-    check([item["rank"] for item in achievements] == list(range(1, 19)), "ledger ranking is not contiguous")
+    check(len(achievements) == 19, "evidence ledger count changed")
+    check([item["rank"] for item in achievements] == list(range(1, 20)), "ledger ranking is not contiguous")
     check(all(item["links"] for item in achievements), "an achievement has no public evidence link")
     check(all(item["caveat"] for item in achievements), "an achievement omits its limitation")
+    check(any(item["status"] == "Approved by one reviewer; open" and any("/pull/2217" in link["url"] for link in item["links"]) for item in achievements), "open OWASP approval is missing or overstated")
 
     subprocess.run([sys.executable, str(ROOT / "scripts" / "render.py")], check=True)
     rendered = README.read_text(encoding="utf-8")
@@ -41,7 +42,7 @@ def main() -> None:
     check("data/profile.json" in rendered, "canonical source is not disclosed")
     check("complete Evidence Ledger" in rendered, "generated README omits ledger link")
     check("Press kit" in rendered and "/press.html" in rendered, "generated README omits press kit")
-    print("profile checks: 18/18 passed")
+    print("profile checks: 19/19 passed")
 
 
 if __name__ == "__main__":

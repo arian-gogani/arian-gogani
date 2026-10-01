@@ -16,7 +16,7 @@
     "x": "https://x.com/nobulexlabs"
   },
   "metrics": {
-    "measured_at": "2026-09-27",
+    "measured_at": "2026-10-01",
     "nobulex_stars": 40,
     "nobulex_forks": 11,
     "verification_fixtures": 27,
@@ -72,6 +72,11 @@
       "label": "Four conformance-harness pull requests merged",
       "url": "https://github.com/ScopeBlind/agent-governance-testvectors/pulls?q=is%3Apr+author%3Aarian-gogani+is%3Amerged",
       "detail": "The public research distinguishes merged changes from endorsement and freshly reruns only the case it says it reruns."
+    },
+    {
+      "label": "OWASP receipt-guidance update approved by a reviewer",
+      "url": "https://github.com/OWASP/CheatSheetSeries/pull/2217",
+      "detail": "The narrowed PR is still open and under review. Approval is not a merge or endorsement."
     },
     {
       "label": "A verifier defect reproduced and fixed upstream",
@@ -179,6 +184,17 @@
     },
     {
       "rank": 9,
+      "title": "OWASP receipt-guidance update approved for further review",
+      "classification": "Open reviewed guidance PR",
+      "status": "Approved by one reviewer; open",
+      "summary": "A reviewer approved the narrowed cheat-sheet change clarifying receipt canonicalization and binding a screening result to its transaction. Another reviewer requested further review.",
+      "links": [
+        {"label": "OWASP CheatSheetSeries #2217", "url": "https://github.com/OWASP/CheatSheetSeries/pull/2217"}
+      ],
+      "caveat": "One approval is not a merge, OWASP endorsement, or adoption. Link-check CI currently fails on docs.python.org 503 responses in files this PR did not change."
+    },
+    {
+      "rank": 10,
       "title": "CVE-2026-45316 recovered from source without advisory knowledge",
       "classification": "Reproduced historical vulnerability",
       "status": "Published research",
@@ -190,7 +206,7 @@
       "caveat": "Recovered, not first discovered. The official advisory classifies it as CWE-863 and low severity."
     },
     {
-      "rank": 10,
+      "rank": 11,
       "title": "Witness Independence scale, vectors, and reference grader",
       "classification": "Self-published executable research",
       "status": "Public",
@@ -201,7 +217,7 @@
       "caveat": "This is Arian's own model and implementation. Its self-test is not independent validation."
     },
     {
-      "rank": 11,
+      "rank": 12,
       "title": "Nobulex solution entry merged alongside other OWASP tools",
       "classification": "Merged catalog listing",
       "status": "Merged",
@@ -212,7 +228,7 @@
       "caveat": "A catalog listing is not normative guidance or endorsement."
     },
     {
-      "rank": 12,
+      "rank": 13,
       "title": "Nobulex package merged into the Dify plugin marketplace",
       "classification": "Merged marketplace package",
       "status": "Merged",
@@ -223,7 +239,7 @@
       "caveat": "Marketplace inclusion is distribution, not proof of adoption or correctness."
     },
     {
-      "rank": 13,
+      "rank": 14,
       "title": "Nobulex added to Microsoft Agent Governance Toolkit adopters",
       "classification": "Merged adopters listing",
       "status": "Merged",
@@ -234,7 +250,7 @@
       "caveat": "The entry was submitted by Arian and does not establish Microsoft endorsement."
     },
     {
-      "rank": 14,
+      "rank": 15,
       "title": "Medicare policy archival baseline measured across 85 documents",
       "classification": "Self-published data audit",
       "status": "Public",
@@ -245,7 +261,7 @@
       "caveat": "The repository labels this a baseline spike and publishes negative results and scope limits."
     },
     {
-      "rank": 15,
+      "rank": 16,
       "title": "DefaultDrift measured 1,253 patch releases",
       "classification": "Self-published package research",
       "status": "Public",
@@ -256,7 +272,7 @@
       "caveat": "This corrects the older 61-case, 11-mutation count. The current code is public."
     },
     {
-      "rank": 16,
+      "rank": 17,
       "title": "Nobulex listed in awesome-mcp-servers",
       "classification": "Merged directory listing",
       "status": "Merged",
@@ -267,7 +283,7 @@
       "caveat": "A directory row is discoverability, not adoption."
     },
     {
-      "rank": 17,
+      "rank": 18,
       "title": "THESIS.md publishes five observable falsifiers",
       "classification": "Self-published thesis",
       "status": "Public",
@@ -278,7 +294,7 @@
       "caveat": "This is self-critique, not external validation."
     },
     {
-      "rank": 18,
+      "rank": 19,
       "title": "yfinance price-adjustment observability patch submitted",
       "classification": "Closed upstream contribution",
       "status": "Closed without merge",
