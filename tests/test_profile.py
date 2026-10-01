@@ -42,7 +42,9 @@ def main() -> None:
     check("data/profile.json" in rendered, "canonical source is not disclosed")
     check("complete Evidence Ledger" in rendered, "generated README omits ledger link")
     check("Press kit" in rendered and "/press.html" in rendered, "generated README omits press kit")
-    print("profile checks: 19/19 passed")
+    check("Link-check CI currently fails" not in json.dumps(data), "profile evidence data still reports a stale CI failure")
+    check("killbill/killbill/pull/2320" in rendered and "killbill/killbill/pull/2321" in rendered, "generated README omits the two open billing fixes")
+    print("profile checks passed")
 
 
 if __name__ == "__main__":

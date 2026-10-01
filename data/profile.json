@@ -74,6 +74,11 @@
       "detail": "The public research distinguishes merged changes from endorsement and freshly reruns only the case it says it reruns."
     },
     {
+      "label": "Two Kill Bill catalog-billing fixes proposed upstream",
+      "url": "https://nobulex.com/research-killbill-catalog-replay",
+      "detail": "Open [PR #2320](https://github.com/killbill/killbill/pull/2320) and [PR #2321](https://github.com/killbill/killbill/pull/2321) have released-tag H2 invoice checks that were red before and green after. Current-master CI is unverified; these are proposals, not merged fixes or customer results."
+    },
+    {
       "label": "OWASP receipt-guidance update approved by a reviewer",
       "url": "https://github.com/OWASP/CheatSheetSeries/pull/2217",
       "detail": "The narrowed PR is still open and under review. Approval is not a merge or endorsement."
@@ -191,7 +196,7 @@
       "links": [
         {"label": "OWASP CheatSheetSeries #2217", "url": "https://github.com/OWASP/CheatSheetSeries/pull/2217"}
       ],
-      "caveat": "One approval is not a merge, OWASP endorsement, or adoption. Link-check CI currently fails on docs.python.org 503 responses in files this PR did not change."
+      "caveat": "One approval is not a merge, OWASP endorsement, or adoption. Review and CI status can change; check the linked pull request for the current state."
     },
     {
       "rank": 10,

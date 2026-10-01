@@ -58,6 +58,8 @@ My current work is Nobulex, an open-source decision-integrity gateway prototype 
 
 That separation matters because missing or unreadable evidence should never quietly become approval.
 
+I am also testing a narrower billing question: when a dry run and final invoice share a missing price change, what independent check would catch it before issuance? [The Kill Bill case and two open fixes]({links['nobulex']}/research-killbill-catalog-replay) are public. This is research, not a deployed billing product or customer validation.
+
 ## Measured, not rounded up
 
 | {metrics['nobulex_stars']} | {metrics['nobulex_forks']} | {metrics['verification_fixtures']} | {metrics['merged_conformance_prs']} |
