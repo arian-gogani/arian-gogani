@@ -43,6 +43,13 @@
       "eyebrow": "Defect research",
       "description": "Minimal reproductions of evaluators and safety checks that can report success without completing the check their result appears to certify.",
       "proof": "Each published case names its reproduction limits instead of generalizing from one defect."
+    },
+    {
+      "name": "Surka",
+      "url": "https://github.com/arian-gogani/surka",
+      "eyebrow": "Founder-tool experiment",
+      "description": "A small app for keeping two-sided cross-promotion swaps on track, from agreed terms through delivery evidence and results.",
+      "proof": "The public app is live at [surka.vercel.app](https://surka.vercel.app). No completed real-world swaps or paying users are claimed."
     }
   ],
   "architecture": [

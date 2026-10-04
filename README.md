@@ -69,6 +69,7 @@ Sign a receipt that binds the action, evidence references, policy version, and o
 | [**Nobulex**](https://github.com/arian-gogani/nobulex) | Executable research on verification boundaries: skipped coverage, self-selected trust anchors, policy scope, log integrity, and ambiguous evidence. | 27 synthetic fixtures, six paired historical parser cases, and public CI. |
 | [**Decision-integrity gateway**](https://github.com/arian-gogani/nobulex-registry) | A Python prototype that separates evidence status from execution policy before a financial action can proceed. | PASS, FAIL, or INDETERMINATE evidence feeds a separate PERMIT, BLOCK, or ESCALATE decision. |
 | [**Fail-open corpus**](https://github.com/arian-gogani/failopen) | Minimal reproductions of evaluators and safety checks that can report success without completing the check their result appears to certify. | Each published case names its reproduction limits instead of generalizing from one defect. |
+| [**Surka**](https://github.com/arian-gogani/surka) | A small app for keeping two-sided cross-promotion swaps on track, from agreed terms through delivery evidence and results. | The public app is live at [surka.vercel.app](https://surka.vercel.app). No completed real-world swaps or paying users are claimed. |
 
 ## External results
 

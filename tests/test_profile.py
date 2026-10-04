@@ -23,7 +23,8 @@ def main() -> None:
     check(data["identity"]["school"] == "Granite Bay High School", "school is missing")
     check(data["links"]["linkedin"].endswith("/arian-gogani-nobulex/"), "wrong LinkedIn profile")
     check("4017b0369" not in json.dumps(data), "old duplicate profile leaked into public identity data")
-    check(len(data["projects"]) == 3, "selected project count changed")
+    check(len(data["projects"]) == 4, "selected project count changed")
+    check(any(p["name"] == "Surka" and "No completed real-world swaps" in p["proof"] for p in data["projects"]), "Surka entry omits its traction limit")
     check(len(data["architecture"]) == 4, "architecture must retain four explicit stages")
     achievements = data["achievements"]
     check(len(achievements) == 19, "evidence ledger count changed")
