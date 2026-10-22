@@ -49,26 +49,24 @@ def render(profile: dict) -> str:
 
 ## What I am building
 
-I work on one question: **what did a successful-looking verification result actually check?**
+My current work is Nobulex: billing accuracy for usage-based products. Billing code can return success and still produce the wrong amount. I find a reproducible case, check that a regression test fails on the old behavior and passes on the fix, and state what I did not examine. [The Kill Bill case and two open fixes]({links['nobulex']}/research-killbill-catalog-replay) are public. This is research and a fixed-scope audit practice, not a deployed billing product or customer validation.
 
-My current work is Nobulex, an open-source decision-integrity gateway prototype for automated financial actions. The gateway is implemented and tested locally; it is not deployed in a customer production path. It keeps two questions separate:
+I also maintain a decision-integrity gateway prototype for automated financial actions. It is implemented and tested locally; it is not deployed in a customer production path. It keeps two questions separate:
 
 1. **What does the available evidence establish?** `PASS`, `FAIL`, or `INDETERMINATE`.
 2. **What may the system do next?** `PERMIT`, `BLOCK`, or `ESCALATE`.
 
 That separation matters because missing or unreadable evidence should never quietly become approval.
 
-I am also testing a narrower billing question: when a dry run and final invoice share a missing price change, what independent check would catch it before issuance? [The Kill Bill case and two open fixes]({links['nobulex']}/research-killbill-catalog-replay) are public. This is research, not a deployed billing product or customer validation.
-
 ## Measured, not rounded up
 
-| {metrics['nobulex_stars']} | {metrics['nobulex_forks']} | {metrics['verification_fixtures']} | {metrics['merged_conformance_prs']} |
-|:---:|:---:|:---:|:---:|
-| stars on Nobulex | forks of Nobulex | executable research fixtures | merged conformance-harness PRs |
+| {metrics['merged_conformance_prs']} |
+|:---:|
+| merged conformance-harness PRs |
 
-<sub>GitHub metrics measured {metrics['measured_at']}. Fixture and PR counts link to inspectable artifacts below.</sub>
+<sub>Counted from merged pull requests #12, #15, #22, #23 and #24 in ScopeBlind's public conformance repository. These were prior agent-governance work, not billing customers.</sub>
 
-## Architecture
+## Prior prototype architecture
 
 ```text
 proposed action
