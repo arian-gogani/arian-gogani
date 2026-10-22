@@ -12,26 +12,24 @@ I build reproducible systems that test what AI verification actually checked, th
 
 ## What I am building
 
-I work on one question: **what did a successful-looking verification result actually check?**
+My current work is Nobulex: billing accuracy for usage-based products. Billing code can return success and still produce the wrong amount. I find a reproducible case, check that a regression test fails on the old behavior and passes on the fix, and state what I did not examine. [The Kill Bill case and two open fixes](https://nobulex.com/research-killbill-catalog-replay) are public. This is research and a fixed-scope audit practice, not a deployed billing product or customer validation.
 
-My current work is Nobulex, an open-source decision-integrity gateway prototype for automated financial actions. The gateway is implemented and tested locally; it is not deployed in a customer production path. It keeps two questions separate:
+I also maintain a decision-integrity gateway prototype for automated financial actions. It is implemented and tested locally; it is not deployed in a customer production path. It keeps two questions separate:
 
 1. **What does the available evidence establish?** `PASS`, `FAIL`, or `INDETERMINATE`.
 2. **What may the system do next?** `PERMIT`, `BLOCK`, or `ESCALATE`.
 
 That separation matters because missing or unreadable evidence should never quietly become approval.
 
-I am also testing a narrower billing question: when a dry run and final invoice share a missing price change, what independent check would catch it before issuance? [The Kill Bill case and two open fixes](https://nobulex.com/research-killbill-catalog-replay) are public. This is research, not a deployed billing product or customer validation.
-
 ## Measured, not rounded up
 
-| 40 | 11 | 27 | 4 |
-|:---:|:---:|:---:|:---:|
-| stars on Nobulex | forks of Nobulex | executable research fixtures | merged conformance-harness PRs |
+| 5 |
+|:---:|
+| merged conformance-harness PRs |
 
-<sub>GitHub metrics measured 2026-10-01. Fixture and PR counts link to inspectable artifacts below.</sub>
+<sub>Counted from merged pull requests #12, #15, #22, #23 and #24 in ScopeBlind's public conformance repository. These were prior agent-governance work, not billing customers.</sub>
 
-## Architecture
+## Prior prototype architecture
 
 ```text
 proposed action
@@ -66,18 +64,17 @@ Sign a receipt that binds the action, evidence references, policy version, and o
 
 | Project | What it does | What is inspectable |
 |---|---|---|
-| [**Nobulex**](https://github.com/arian-gogani/nobulex) | Executable research on verification boundaries: skipped coverage, self-selected trust anchors, policy scope, log integrity, and ambiguous evidence. | 27 synthetic fixtures, six paired historical parser cases, and public CI. |
+| [**Nobulex**](https://nobulex.com/research-killbill-catalog-replay) | Reproduces billing errors that can return success while producing the wrong amount. The current work is a fixed-scope audit and mutation-based regression checks, not a deployed product. | The Kill Bill case links two open fixes and states the tested revision and limits. |
 | [**Decision-integrity gateway**](https://github.com/arian-gogani/nobulex-registry) | A Python prototype that separates evidence status from execution policy before a financial action can proceed. | PASS, FAIL, or INDETERMINATE evidence feeds a separate PERMIT, BLOCK, or ESCALATE decision. |
 | [**Fail-open corpus**](https://github.com/arian-gogani/failopen) | Minimal reproductions of evaluators and safety checks that can report success without completing the check their result appears to certify. | Each published case names its reproduction limits instead of generalizing from one defect. |
 | [**Surka**](https://github.com/arian-gogani/surka) | A small app for keeping two-sided cross-promotion swaps on track, from agreed terms through delivery evidence and results. | The public app is live at [surka.vercel.app](https://surka.vercel.app). No completed real-world swaps or paying users are claimed. |
 
 ## External results
 
-- [**Four conformance-harness pull requests merged**](https://github.com/ScopeBlind/agent-governance-testvectors/pulls?q=is%3Apr+author%3Aarian-gogani+is%3Amerged) - The public research distinguishes merged changes from endorsement and freshly reruns only the case it says it reruns.
+- [**Five conformance-harness pull requests merged**](https://github.com/ScopeBlind/agent-governance-testvectors/pulls?q=is%3Apr+author%3Aarian-gogani+is%3Amerged) - The public research distinguishes merged changes from endorsement and freshly reruns only the case it says it reruns.
 - [**Two Kill Bill catalog-billing fixes proposed upstream**](https://nobulex.com/research-killbill-catalog-replay) - Open [PR #2320](https://github.com/killbill/killbill/pull/2320) and [PR #2321](https://github.com/killbill/killbill/pull/2321) have released-tag H2 invoice checks that were red before and green after. Current-master CI is unverified; these are proposals, not merged fixes or customer results.
-- [**OWASP receipt-guidance update approved by a reviewer**](https://github.com/OWASP/CheatSheetSeries/pull/2217) - The narrowed PR is still open and under review. Approval is not a merge or endorsement.
+- [**OWASP receipt-guidance update merged**](https://github.com/OWASP/CheatSheetSeries/pull/2217) - The narrowed PR merged on 2 October 2026. A merge is not an OWASP endorsement of Nobulex.
 - [**A verifier defect reproduced and fixed upstream**](https://github.com/ScopeBlind/agent-governance-testvectors/pull/24) - The maintainer reproduced the failure, released a corrected verifier, and confirmed all four negative checks.
-- [**Verification-boundary research runs in public CI**](https://github.com/arian-gogani/nobulex/actions/workflows/verification-boundaries.yml) - The fixture expectations, historical replay metadata, and deliberate-regression checks are inspectable.
 
 [**Open the complete Evidence Ledger →**](https://arian-gogani.github.io/evidence.html)
 

@@ -27,11 +27,17 @@ def main() -> None:
     check(any(p["name"] == "Surka" and "No completed real-world swaps" in p["proof"] for p in data["projects"]), "Surka entry omits its traction limit")
     check(len(data["architecture"]) == 4, "architecture must retain four explicit stages")
     achievements = data["achievements"]
-    check(len(achievements) == 19, "evidence ledger count changed")
-    check([item["rank"] for item in achievements] == list(range(1, 20)), "ledger ranking is not contiguous")
+    check(len(achievements) == 18, "evidence ledger count changed after removing misattributed OWASP PR")
+    check([item["rank"] for item in achievements] == list(range(1, 19)), "ledger ranking is not contiguous")
     check(all(item["links"] for item in achievements), "an achievement has no public evidence link")
     check(all(item["caveat"] for item in achievements), "an achievement omits its limitation")
-    check(any(item["status"] == "Approved by one reviewer; open" and any("/pull/2217" in link["url"] for link in item["links"]) for item in achievements), "open OWASP approval is missing or overstated")
+    check(not any("/pull/2210" in link["url"] for item in achievements for link in item["links"]), "another author's OWASP PR is credited to Arian")
+    check(any(item["status"] == "Merged" and any("/pull/2217" in link["url"] for link in item["links"]) for item in achievements), "merged OWASP PR status is stale")
+    check(data["metrics"] == {"merged_conformance_prs": 5}, "unverifiable or stale profile metrics remain")
+    workflow = (ROOT / ".github" / "workflows" / "profile.yml").read_text(encoding="utf-8")
+    check("refresh_metrics.py" not in workflow and "contents: write" not in workflow, "CI still fetches the unavailable repo or writes metrics")
+    check("github.com/arian-gogani/nobulex" not in data["projects"][0]["url"], "selected work links to DMCA-blocked repository")
+    check(not any("github.com/arian-gogani/nobulex/actions" in r["url"] for r in data["external_results"]), "external results link to inaccessible CI")
 
     subprocess.run([sys.executable, str(ROOT / "scripts" / "render.py")], check=True)
     rendered = README.read_text(encoding="utf-8")
@@ -45,6 +51,7 @@ def main() -> None:
     check("Press kit" in rendered and "/press.html" in rendered, "generated README omits press kit")
     check("Link-check CI currently fails" not in json.dumps(data), "profile evidence data still reports a stale CI failure")
     check("killbill/killbill/pull/2320" in rendered and "killbill/killbill/pull/2321" in rendered, "generated README omits the two open billing fixes")
+    check("40 stars" not in rendered and "27 executable" not in rendered, "generated README contains stale metrics")
     print("profile checks passed")
 
 
