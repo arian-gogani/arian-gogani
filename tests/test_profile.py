@@ -34,6 +34,8 @@ def main() -> None:
     check(not any("/pull/2210" in link["url"] for item in achievements for link in item["links"]), "another author's OWASP PR is credited to Arian")
     check(any(item["status"] == "Merged" and any("/pull/2217" in link["url"] for link in item["links"]) for item in achievements), "merged OWASP PR status is stale")
     check(data["metrics"] == {"merged_conformance_prs": 5}, "unverifiable or stale profile metrics remain")
+    workflow = (ROOT / ".github" / "workflows" / "profile.yml").read_text(encoding="utf-8")
+    check("refresh_metrics.py" not in workflow and "contents: write" not in workflow, "CI still fetches the unavailable repo or writes metrics")
     check("github.com/arian-gogani/nobulex" not in data["projects"][0]["url"], "selected work links to DMCA-blocked repository")
     check(not any("github.com/arian-gogani/nobulex/actions" in r["url"] for r in data["external_results"]), "external results link to inaccessible CI")
 
